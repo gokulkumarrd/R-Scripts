@@ -1,7 +1,7 @@
 
 submit <- local({
         getOutput <- function(sid) {
-               
+                ## JUST FOR TESTING
                 ## sid <- sub("-dev", "", sid, fixed = TRUE)
                 if(sid == "pollutantmean-1") {
                         source("pollutantmean.R")
@@ -230,7 +230,7 @@ submit <- local({
                 output <- getOutput(sid)        
                 
                 if(!manual) {
-                     
+                        ## Get challenge
                         ch <- try(getChallenge(email, challenge.url), silent=TRUE)
                         ## Check if url is valid, i.e. challenge received
                         ch_ok <- !is(ch, "try-error") && exists("ch.key", ch) && !is.na(ch$ch.key)
